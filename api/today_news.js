@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   const REPO = 'abuabuliu/news-collector';
 
@@ -18,4 +18,4 @@ module.exports = async (req, res) => {
   } else {
     res.status(404).json({ error: '今天沒有新增訊息' });
   }
-};
+}
